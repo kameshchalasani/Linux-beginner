@@ -1,0 +1,35 @@
+a. Create a user named kirsty on the App server 1 in Stratos Datacenter.
+b. Set its UID to 1013 and home directory to /var/www/kirsty.
+
+Solution:-
+Step 1:-
+  Connect to the Server:
+  Use SSH or any other preferred method to connect to App server 1.
+
+    ssh username@your_server_ip
+
+Step 2:-
+  Create the User:
+  Use the useradd command to create the user "kirsty" with the specified UID and home directory.
+
+    sudo useradd -u 1013 -m -d /var/www/kirsty -s /bin/bash kirsty
+
+    -u 1013: Sets the UID to 1013.
+    -m: Creates the home directory if it doesn't exist.
+    -d /var/www/kirsty: Sets the home directory to /var/www/kirsty.
+    -s /bin/bash: Sets the default shell to /bin/bash.
+
+Step3:-
+  Set Password for the User:
+  Use the passwd command to set a password for the new user
+
+    sudo passwd kirsty
+
+Step 4:-
+  Verify User Creation:
+  You can use the id command or grep to verify that the user "kirsty" has been created with the correct UID.
+
+id kirsty
+or
+grep kirsty /etc/passwd
+
